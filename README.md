@@ -6,17 +6,23 @@ Professional UI themes for QGIS 4.0 — powered by the Qt6 QSS variable system.
 
 ### Premium Dark
 
-<img width="75%"  alt="11671f70ebf962e4" src="https://github.com/user-attachments/assets/e67c4501-c990-492c-a47c-67db29336cc3" />
+<kbd>
+<img width="80%"  alt="11671f70ebf962e4" src="https://github.com/user-attachments/assets/e67c4501-c990-492c-a47c-67db29336cc3" />
+</kbd>
 
 ### QGIS Website
 
-<img width="75%"  alt="54a3d5bf7b9adb2f" src="https://github.com/user-attachments/assets/28c269a0-2750-4f0e-ad5a-03b21c14883f" />
+<kbd>
+<img width="80%"  alt="54a3d5bf7b9adb2f" src="https://github.com/user-attachments/assets/28c269a0-2750-4f0e-ad5a-03b21c14883f" />
+</kbd>
 
 ### Light Blue
 
-<img width="75%"  alt="daa32cc75ab0c92c" src="https://github.com/user-attachments/assets/df07c6e6-7450-498f-aa47-bc32be74cdf1" />
+<kbd>
+<img width="80%"  alt="daa32cc75ab0c92c" src="https://github.com/user-attachments/assets/df07c6e6-7450-498f-aa47-bc32be74cdf1" />
+</kbd>kbd>
 
-## Requirements
+  ## Requirements
 
 - QGIS **4.0** or later (Qt6 theme engine, PR #64503)
 
