@@ -4,63 +4,58 @@
  * Compatible with: QGIS 4.0 / Qt6 theme system (PR #64503)
  * Format        : QGIS variables.qss — `@name: value` per line
  *                 Tokens are text-substituted into style.qss at load time.
- * -------------------------------------------------------------------------
- * Palette source : QGIS official website (qgis.org) — May 2025
- *   Brand green  : #589632   (logo outer ring / primary CTA)
- *   Orange       : #f07832   (logo arrow / "Free and Open Source" badge)
- *   Background   : #0d1520   (deep professional navy-blue)
  * =========================================================================
  */
 
-/* ---- Accent (QGIS brand green — logo outer ring) ------------------------ */
-@accent:                 #589632;
-@accent_hover:           #67ad3a;
-@accent_pressed:         #4a7e28;
-@accent_checked_border:  #4d8030;
-@accent_disabled:        #3a5825;
-@accent_indeterminate:   #3d6a28;
-@accent_translucent:     rgba(88, 150, 50, 0.15);
+/* ---- Accent (brand green) ----------------------------------------------- */
+@accent:                 #6b8c42;
+@accent_hover:           #7a9e4c;
+@accent_pressed:         #5c7a38;
+@accent_checked_border:  #5a7a3a;
+@accent_disabled:        #4a5a3a;
+@accent_indeterminate:   #4a6635;
+@accent_translucent:     rgba(107, 140, 66, 0.15);
 
-/* ---- Backgrounds (deep professional navy-blue) -------------------------- */
-@bg_window:              #111c2b;
-@bg_base:                #0d1520;
-@bg_alt:                 #0f1923;
-@bg_dock:                #101a26;
-@bg_statusbar:           #0c1420;
-@bg_menu:                #121e2e;
-@bg_disabled:            #121b28;
-@bg_btn_status_hover:    #131d2c;
-@bg_pressed:             #0f1924;
-@bg_hover:               #172133;
-@bg_hover_raised:        #1e2d42;
-@bg_indicator:           #0e1822;
-@bg_btn_hover:           #1f2f45;
-@bg_selected:            #1a3020;
-@bg_selected_active:     #214018;
-@bg_selected_inactive:   #152030;
-@bg_plugin_inactive:     #1e3018;
-@bg_plugin_sel_hover:    #284020;
+/* ---- Backgrounds -------------------------------------------------------- */
+@bg_window:              #2b2b2b;
+@bg_base:                #232323;
+@bg_alt:                 #262626;
+@bg_dock:                #282828;
+@bg_statusbar:           #242424;
+@bg_menu:                #2d2d2d;
+@bg_disabled:            #2e2e2e;
+@bg_btn_status_hover:    #2f2f2f;
+@bg_pressed:             #2c2c2c;
+@bg_hover:               #303030;
+@bg_hover_raised:        #383838;
+@bg_indicator:           #252525;
+@bg_btn_hover:           #404040;
+@bg_selected:            #3a4a30;
+@bg_selected_active:     #44582f;
+@bg_selected_inactive:   #353535;
+@bg_plugin_inactive:     #3f4a35;
+@bg_plugin_sel_hover:    #4f6638;
 
-/* ---- Borders / separators (deep navy family) ---------------------------- */
-@border:                 #1c2d40;
-@border_subtle:          #09111c;
-@border_darker:          #070e18;
-@border_dim:             #152030;
-@border_btn:             #1e2f42;
-@border_hover:           #274060;
-@border_indicator:       #2a4258;
-@border_list_item:       #111e2c;
-@separator_bg:           #0a1420;
+/* ---- Borders / separators ----------------------------------------------- */
+@border:                 #3a3a3a;
+@border_subtle:          #1f1f1f;
+@border_darker:          #1c1c1c;
+@border_dim:             #333333;
+@border_btn:             #3f3f3f;
+@border_hover:           #484848;
+@border_indicator:       #4a4a4a;
+@border_list_item:       #2a2a2a;
+@separator_bg:           #222222;
 
 /* ---- Text --------------------------------------------------------------- */
 @text:                   #e8e8e8;
 @text_bright:            #ffffff;
-@text_dim:               #9aafc4;
-@text_disabled:          #5a7080;
-@text_light:             #d0dce8;
-@text_header:            #c8d8e8;
-@text_placeholder:       #6a8499;
-@text_dark:              #0f1923;
+@text_dim:               #b0b0b0;
+@text_disabled:          #6a6a6a;
+@text_light:             #d8d8d8;
+@text_header:            #d0d0d0;
+@text_placeholder:       #787878;
+@text_dark:              #1a1a1a;
 
 /* @checkmark, @arrow_normal and @arrow_disabled below are preserved from the
  * original colour palette but are NOT referenced in style.qss.  In the source
@@ -72,8 +67,8 @@
 @checkmark:              #ffffff;
 
 /* ---- Arrow / icon colours (reserved, see note above) -------------------- */
-@arrow_normal:           #7a9ab8;
-@arrow_disabled:         #2a3f58;
+@arrow_normal:           #c8c8c8;
+@arrow_disabled:         #5a5a5a;
 
 /* ---- Scrollbar ---------------------------------------------------------- */
-@scrollbar_handle_hover: #2c4460;
+@scrollbar_handle_hover: #525252;

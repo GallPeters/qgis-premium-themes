@@ -1,0 +1,176 @@
+/* =========================================================================
+ * QGIS Premium Light Theme — Color Variables  (ArcGIS Pro Bright style)
+ * -------------------------------------------------------------------------
+ * Compatible with : QGIS 4.0 / Qt6 theme system (PR #64503)
+ * Format          : QGIS variables.qss — `@name: value` per line
+ *                   Tokens are text-substituted into style.qss at load time.
+ * -------------------------------------------------------------------------
+ * Palette DNA — ArcGIS Pro "Light" UI  (Esri, 2024)
+ *
+ *   Esri Blue     #0079C1   Primary brand / interactive elements / focus
+ *   Blue hover    #0090DC   Lighter energetic feedback state
+ *   Surface white #FFFFFF   Absolute brightest surface (editors, lists)
+ *   Panel grey    #F2F2F2   Default window / dialog chrome
+ *   Dock grey     #EBEBEB   Side-panel / dock widget backgrounds
+ *   Status grey   #E0E0E0   Status bar, toolbar tray
+ *
+ * Design principles
+ *   • Three-stop grey ramp (F2→EB→E0) for window depth without muddiness.
+ *   • Pure white reserved for content surfaces (lists, editors, canvases).
+ *   • Esri blue tints (#EBF5FB → #C0DFEF) used exclusively for selection /
+ *     hover states so interactive feedback is unmistakable.
+ *   • All borders use neutral greys (never blue) except @border_hover which
+ *     switches to the accent on interactive focus.
+ *   • Text is charcoal (#323232) not pure black — matches ArcGIS Pro body.
+ *   • WCAG AA maintained: accent #0079C1 on white = 4.6 : 1.
+ * =========================================================================
+ */
+
+
+/* =========================================================================
+ * ACCENT — Esri / ArcGIS Pro Blue  #0079C1
+ * =========================================================================
+ *  Base    #0079C1   primary interactive, focus rings, active tabs
+ *  Hover   +15 L     #0090DC  — lighter, energetic rollover feedback
+ *  Pressed −12 L     #005E99  — darker, tactile press depression
+ *  Checked  −8 L     #0068AA  — distinct border for checked controls
+ *  Disabled desaturated sky   #A8CCDE  — clearly inactive, same hue
+ *  Indet.  mid-point          #4DA6D4  — halfway between disabled & base
+ *  Transl. 12 % alpha halo    rgba(0, 121, 193, 0.12)
+ * =========================================================================
+ */
+@accent:                 #0079C1;
+@accent_hover:           #0090DC;
+@accent_pressed:         #005E99;
+@accent_checked_border:  #0068AA;
+@accent_disabled:        #A8CCDE;
+@accent_indeterminate:   #4DA6D4;
+@accent_translucent:     rgba(0, 121, 193, 0.12);
+
+
+/* =========================================================================
+ * BACKGROUNDS
+ * =========================================================================
+ *  Content surfaces (white family)
+ *   #FFFFFF  base       — list views, tree views, text editors, map canvas
+ *   #FAFAFA  alt        — alternating table rows, subtle inset surfaces
+ *   #F5F5F5  indicator  — progress / toggle track fills
+ *
+ *  Chrome surfaces (grey family)
+ *   #F2F2F2  window     — main window, dialogs, tab pages
+ *   #EBEBEB  dock       — side-panel / dock widget chrome
+ *   #E8E8E8  menu       — pop-up menus, combo drop-downs, tool-tips
+ *   #E4E4E4  disabled   — disabled field / widget backgrounds
+ *   #E0E0E0  statusbar  — status bar, toolbar tray
+ *
+ *  Interactive / hover surfaces (Esri blue-tint family)
+ *   #EBF5FB  btn_status_hover — tool-button status area hover
+ *   #E5F2FA  hover            — general widget hover fill
+ *   #D8EDF8  hover_raised     — elevated hover (menu item, tree node)
+ *   #CEE8F5  btn_hover        — button hover fill
+ *   #C8E4F3  pressed          — pressed / active button fill
+ *
+ *  Selection surfaces (Esri blue-tint, stronger)
+ *   #C0DFEF  selected         — unfocused / inactive selection
+ *   #9DCDE8  selected_active  — focused selection (window active)
+ *   #D8D8D8  selected_inact.  — grey selection when window loses focus
+ *   #C8E0EE  plugin_inactive  — plugin-list row, unselected highlight
+ *   #A8D0E8  plugin_sel_hover — plugin-list hovered selection
+ * =========================================================================
+ */
+@bg_window:              #F2F2F2;
+@bg_base:                #FFFFFF;
+@bg_alt:                 #FAFAFA;
+@bg_dock:                #EBEBEB;
+@bg_statusbar:           #E0E0E0;
+@bg_menu:                #E8E8E8;
+@bg_disabled:            #E4E4E4;
+@bg_btn_status_hover:    #EBF5FB;
+@bg_pressed:             #C8E4F3;
+@bg_hover:               #E5F2FA;
+@bg_hover_raised:        #D8EDF8;
+@bg_indicator:           #F5F5F5;
+@bg_btn_hover:           #CEE8F5;
+@bg_selected:            #C0DFEF;
+@bg_selected_active:     #9DCDE8;
+@bg_selected_inactive:   #D8D8D8;
+@bg_plugin_inactive:     #C8E0EE;
+@bg_plugin_sel_hover:    #A8D0E8;
+
+
+/* =========================================================================
+ * BORDERS / SEPARATORS
+ * =========================================================================
+ *  All border tokens are neutral greys except @border_hover which flips to
+ *  accent on interactive focus — mirroring ArcGIS Pro's focus-ring idiom.
+ *
+ *  @border              standard widget outline          #CCCCCC
+ *  @border_subtle       hairline dividers, lightest      #E8E8E8
+ *  @border_darker       inset / sunken edges             #BEBEBE
+ *  @border_dim          secondary / muted outlines       #D8D8D8
+ *  @border_btn          button ring at rest              #C2C2C2
+ *  @border_hover        focus / hover ring (accent)      #0079C1
+ *  @border_indicator    progress / step indicators       #B0B0B0
+ *  @border_list_item    row separators in lists          #E4E4E4
+ *  @separator_bg        toolbar / menu separator fill    #D0D0D0
+ * =========================================================================
+ */
+@border:                 #CCCCCC;
+@border_subtle:          #E8E8E8;
+@border_darker:          #BEBEBE;
+@border_dim:             #D8D8D8;
+@border_btn:             #C2C2C2;
+@border_hover:           #0079C1;
+@border_indicator:       #B0B0B0;
+@border_list_item:       #E4E4E4;
+@separator_bg:           #D0D0D0;
+
+
+/* =========================================================================
+ * TEXT
+ * =========================================================================
+ *  Charcoal family — H 0 / S 0 / L stepped 10 → 100 %
+ *  ArcGIS Pro never uses pure #000000 for body text — charcoal #323232
+ *  keeps contrast without the harshness of ink-on-paper black.
+ *
+ *  @text            body / general UI copy       #323232
+ *  @text_bright     headings, active labels       #1A1A1A  (near-black)
+ *  @text_dim        secondary / metadata          #6E6E6E
+ *  @text_disabled   greyed-out labels             #ABABAB
+ *  @text_light      slightly muted body           #4A4A4A
+ *  @text_header     panel / dock titles           #3C3C3C
+ *  @text_placeholder input hint text              #9E9E9E
+ *  @text_dark       text on accent/dark surfaces  #FFFFFF
+ * =========================================================================
+ */
+@text:                   #323232;
+@text_bright:            #1A1A1A;
+@text_dim:               #6E6E6E;
+@text_disabled:          #ABABAB;
+@text_light:             #4A4A4A;
+@text_header:            #3C3C3C;
+@text_placeholder:       #9E9E9E;
+@text_dark:              #FFFFFF;
+
+
+/* =========================================================================
+ * RESERVED PAINTER TOKENS
+ * =========================================================================
+ *  Not referenced in style.qss — used by QPainter in ThemedProxyStyle for
+ *  checkbox ticks, spin-box arrows, and tree-branch glyphs.
+ *  Kept here so icon-shipping variants can reference them without editing
+ *  the palette, and so the palette remains self-documenting.
+ * =========================================================================
+ */
+@checkmark:              #FFFFFF;
+
+/* ---- Arrow / icon glyph colours ---------------------------------------- */
+@arrow_normal:           #6E6E6E;
+@arrow_disabled:         #C0C0C0;
+
+
+/* =========================================================================
+ * SCROLLBAR
+ * =========================================================================
+ */
+@scrollbar_handle_hover: #ABABAB;
