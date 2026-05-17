@@ -1,0 +1,79 @@
+/* =========================================================================
+ * QGIS Premium Dark Theme - Color Variables
+ * -------------------------------------------------------------------------
+ * Compatible with: QGIS 4.0 / Qt6 theme system (PR #64503)
+ * Format        : QGIS variables.qss — `@name: value` per line
+ *                 Tokens are text-substituted into style.qss at load time.
+ * -------------------------------------------------------------------------
+ * Palette source : QGIS official website (qgis.org) — May 2025
+ *   Brand green  : #589632   (logo outer ring / primary CTA)
+ *   Orange       : #f07832   (logo arrow / "Free and Open Source" badge)
+ *   Background   : #0d1520   (deep professional navy-blue)
+ * =========================================================================
+ */
+
+/* ---- Accent (QGIS brand green — logo outer ring) ------------------------ */
+@accent:                 #589632;
+@accent_hover:           #67ad3a;
+@accent_pressed:         #4a7e28;
+@accent_checked_border:  #4d8030;
+@accent_disabled:        #3a5825;
+@accent_indeterminate:   #3d6a28;
+@accent_translucent:     rgba(88, 150, 50, 0.15);
+
+/* ---- Backgrounds (deep professional navy-blue) -------------------------- */
+@bg_window:              #111c2b;
+@bg_base:                #0d1520;
+@bg_alt:                 #0f1923;
+@bg_dock:                #101a26;
+@bg_statusbar:           #0c1420;
+@bg_menu:                #121e2e;
+@bg_disabled:            #121b28;
+@bg_btn_status_hover:    #131d2c;
+@bg_pressed:             #0f1924;
+@bg_hover:               #172133;
+@bg_hover_raised:        #1e2d42;
+@bg_indicator:           #0e1822;
+@bg_btn_hover:           #1f2f45;
+@bg_selected:            #1a3020;
+@bg_selected_active:     #214018;
+@bg_selected_inactive:   #152030;
+@bg_plugin_inactive:     #1e3018;
+@bg_plugin_sel_hover:    #284020;
+
+/* ---- Borders / separators (deep navy family) ---------------------------- */
+@border:                 #1c2d40;
+@border_subtle:          #09111c;
+@border_darker:          #070e18;
+@border_dim:             #152030;
+@border_btn:             #1e2f42;
+@border_hover:           #274060;
+@border_indicator:       #2a4258;
+@border_list_item:       #111e2c;
+@separator_bg:           #0a1420;
+
+/* ---- Text --------------------------------------------------------------- */
+@text:                   #e8e8e8;
+@text_bright:            #ffffff;
+@text_dim:               #9aafc4;
+@text_disabled:          #5a7080;
+@text_light:             #d0dce8;
+@text_header:            #c8d8e8;
+@text_placeholder:       #6a8499;
+@text_dark:              #0f1923;
+
+/* @checkmark, @arrow_normal and @arrow_disabled below are preserved from the
+ * original colour palette but are NOT referenced in style.qss.  In the source
+ * script they are used by QPainter inside ThemedProxyStyle (checkbox tick,
+ * spin/branch arrow glyphs) — drawing operations that have no QSS analogue.
+ * They are kept here so the palette stays complete and so an icon-shipping
+ * variant of the theme can reference them without re-editing the palette.
+ */
+@checkmark:              #ffffff;
+
+/* ---- Arrow / icon colours (reserved, see note above) -------------------- */
+@arrow_normal:           #7a9ab8;
+@arrow_disabled:         #2a3f58;
+
+/* ---- Scrollbar ---------------------------------------------------------- */
+@scrollbar_handle_hover: #2c4460;
