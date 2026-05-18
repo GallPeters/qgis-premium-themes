@@ -1,6 +1,6 @@
 
 [general]
-name=QGIS Premium Themes
+name=QGIS Studio Themes
 qgisMinimumVersion=3.44
 qgisMaximumVersion=4.99
 description=Modern themes that enhance QGIS UI and reflect its true power through a clean, professional design.
@@ -15,4 +15,4 @@ repository=https://github.com/GallPeters/qgis-studio-themes
 tracker=https://github.com/GallPeters/qgis-studio-themes
 tags=qss, gui, theme, themes, style, ui
 icon=icon.png
-changelog=hasProcessingProvider=yes
+changelog=https://github.com/GallPeters/qgis-studio-themes

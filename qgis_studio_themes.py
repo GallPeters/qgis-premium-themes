@@ -7,7 +7,7 @@ class QgisStudioThemesPlugin:
     QGIS theme plugin sample
     """
 
-    THEMES = ["Premium", "Web", "Pro"]
+    THEMES = ["Premium", "Web", "Pro", "Dark"]
     
     def __init__(self, iface):
         """init"""
@@ -16,11 +16,11 @@ class QgisStudioThemesPlugin:
         """startup"""
         for theme in self.THEMES:
             QgsApplication.applicationThemeRegistry().addTheme(
-                   theme, 
+                   f'Studio {theme}', 
                     os.path.join(os.path.dirname(__file__), 'themes', theme.lower())
             )
 
     def unload(self):
         """teardown"""
         for theme in self.THEMES:
-            QgsApplication.applicationThemeRegistry().removeTheme(theme)
+            QgsApplication.applicationThemeRegistry().removeTheme(f'Studio {theme}')
