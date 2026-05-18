@@ -1,36 +1,24 @@
-# QGIS Premium Themes
+# QGIS Studio Themes
 
-Professional UI themes for QGIS 4.0 — powered by the Qt6 QSS variable system.
-
-## Themes
-
-### Premium Dark
+Modern UI themes for QGIS that give the interface a clean, studio-grade look and reflect the real strength of QGIS through a refined visual experience.
 
 <kbd>
 <img width="100%"  alt="11671f70ebf962e4" src="https://github.com/user-attachments/assets/e67c4501-c990-492c-a47c-67db29336cc3" />
 </kbd>
 
-### QGIS Website
+## Requirements
 
-<kbd>
-<img width="100%"  alt="54a3d5bf7b9adb2f" src="https://github.com/user-attachments/assets/28c269a0-2750-4f0e-ad5a-03b21c14883f" />
-</kbd>
-
-### Light Blue
-
-<kbd>
-<img width="100%"  alt="daa32cc75ab0c92c" src="https://github.com/user-attachments/assets/df07c6e6-7450-498f-aa47-bc32be74cdf1" />
-</kbd>kbd>
-
-  ## Requirements
-
-- QGIS **4.0** or later (Qt6 theme engine, PR #64503)
+- QGIS **4.0** or later.
 
 ## Usage
 
 1. Go to **Settings → Options → General**
 2. Under **UI Theme**, select one of the three themes
 3. Restart QGIS to apply
+
+<kbd>
+<img width="637" height="323" alt="image" src="https://github.com/user-attachments/assets/dce6e266-9f10-46f7-90a4-57ba6ff2f7e5" />
+</kbd>
 
 ## Contributing
 
