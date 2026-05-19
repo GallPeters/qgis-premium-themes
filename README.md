@@ -1,12 +1,14 @@
 # QGIS Studio Themes
 
-Modern UI themes for QGIS that give the interface a clean, studio-grade look and reflect the real strength of QGIS.
+🎨 A plugin that adds **modern UI** themes to QGIS.
 
+🗺️ A professional look that reflects **QGIS’s true power**.
 
+❤️‍🔥 Download, rate, and share to spread the word — **QGIS can look as great as it really is**.
+
+🔥 Go **FOSS!**
 
 https://github.com/user-attachments/assets/0ab0ae2d-79b5-44c5-9a6e-c7969d54c6bf
-
-
 
 ## Requirements
 
