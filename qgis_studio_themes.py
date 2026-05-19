@@ -1,6 +1,14 @@
 from qgis.core import QgsApplication
-
+from qgis.PyQt.QtCore import QDir
+from pathlib import Path
 import os
+
+
+def init_theme_paths():
+    themes_dir = Path(__file__).parent / "themes"
+
+    # THIS is the key change
+    QDir.addSearchPath("theme", str(themes_dir))
 
 class QgisStudioThemesPlugin:
     """
@@ -8,7 +16,7 @@ class QgisStudioThemesPlugin:
     """
 
     THEMES = ["Premium", "Web", "Pro", "Dark"]
-    
+
     def __init__(self, iface):
         """init"""
 
