@@ -12,11 +12,12 @@ https://github.com/user-attachments/assets/0ab0ae2d-79b5-44c5-9a6e-c7969d54c6bf
 
 - QGIS **4.0** or later.
 
-## Usage
+## Installation & Usage
 
-1. Go to **Settings → Options → General**
-2. Under **UI Theme**, select one of the three themes
-3. Restart QGIS to apply
+1. Download the plugin using the  **Plugin mannager** or from the [**plugins website.**](https://plugins.qgis.org/plugins/qgis_studio_themes/)
+2. Go to **Settings → Options → General**
+3. Under **UI Theme**, select one of the four themes
+4. Restart QGIS to apply
    
 
 <kbd>
