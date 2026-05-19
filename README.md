@@ -2,9 +2,11 @@
 
 Modern UI themes for QGIS that give the interface a clean, studio-grade look and reflect the real strength of QGIS.
 
-<kbd>
-<img alt="11671f70ebf962e4" src="https://github.com/user-attachments/assets/e67c4501-c990-492c-a47c-67db29336cc3" />
-</kbd>
+
+
+https://github.com/user-attachments/assets/0ab0ae2d-79b5-44c5-9a6e-c7969d54c6bf
+
+
 
 ## Requirements
 
@@ -16,8 +18,9 @@ Modern UI themes for QGIS that give the interface a clean, studio-grade look and
 2. Under **UI Theme**, select one of the three themes
 3. Restart QGIS to apply
    
+
 <kbd>
-<img  alt="image" src="https://github.com/user-attachments/assets/8006c966-f840-4bc0-aa72-fa02e2d262aa" />
+<img width="638" height="341" alt="image" src="https://github.com/user-attachments/assets/3d196242-4d97-4356-a96f-548a18c2642a" />
 </kbd>
 
 ## Contributing
