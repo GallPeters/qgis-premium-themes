@@ -284,13 +284,14 @@ QToolButton::menu-indicator {
     top:    0.2em;
     right: -0.2em;
     image: url(theme:premium/icons/arrow-down.svg);
-
+    width:  0.8em;
+    height: 1.2em;
 }
 QToolButton::menu-indicator:hover {
     image: url(theme:premium/icons/arrow-down-hover.svg);
 }
 QToolButton::menu-indicator:disabled {
-    image: url(theme:premium/icons/arrow-down.svg);
+    image: url(theme:premium/icons/arrow-down-disabled.svg);
 }
 QToolButton::menu-button {
     border-left: 1px solid @border;
@@ -419,25 +420,28 @@ QgsSpinBox::down-button:pressed, QgsDoubleSpinBox::down-button:pressed {
  */
 QAbstractSpinBox::up-arrow {
     image: url(theme:premium/icons/arrow-up.svg);
+    width:  0.8em;
+    height: 1.2em;
 }
 QAbstractSpinBox::up-arrow:hover {
-    image: url(theme:premium/icons/arrow-up.svg);
+    image: url(theme:premium/icons/arrow-up-hover.svg);
 }
 QAbstractSpinBox::up-arrow:disabled,
 QAbstractSpinBox::up-arrow:off {
-    image: url(theme:premium/icons/arrow-up.svg);
+    image: url(theme:premium/icons/arrow-up-disabled.svg);
 }
 
 QAbstractSpinBox::down-arrow {
     image: url(theme:premium/icons/arrow-down.svg);
-
+    width:  0.8em;
+    height: 1.2em;
 }
 QAbstractSpinBox::down-arrow:hover {
-    image: url(theme:premium/icons/arrow-down.svg);
+    image: url(theme:premium/icons/arrow-down-hover.svg);
 }
 QAbstractSpinBox::down-arrow:disabled,
 QAbstractSpinBox::down-arrow:off {
-    image: url(theme:premium/icons/arrow-down.svg);
+    image: url(theme:premium/icons/arrow-down-disabled.svg);
 }
 
 /* Header sort indicator (visible in QTableView / QTreeView / attribute tables
@@ -445,9 +449,11 @@ QAbstractSpinBox::down-arrow:off {
  */
 QHeaderView::up-arrow {
     image: url(theme:premium/icons/arrow-up.svg);
+    width:  1.2em;
 }
 QHeaderView::down-arrow {
     image: url(theme:premium/icons/arrow-down.svg);
+    width:  1.2em;
 }
 
 
@@ -458,8 +464,9 @@ QHeaderView::down-arrow {
 QComboBox {
     background-color: @bg_base;
     color: @text;
-    border-radius: 2px;
-    padding: 0px 8px;
+    border: 1px solid @border;
+    border-radius: 4px;
+    padding: 3px 8px;
     min-height: 18px;
     min-width:  60px;
     selection-background-color: @accent;
@@ -484,7 +491,7 @@ QComboBox QAbstractItemView {
     background-color: @bg_menu;
     color: @text;
     border: 1px solid @border;
-    border-radius: 0px;
+    border-radius: 4px;
     padding: 3px;
     selection-background-color: @bg_selected;
     selection-color: @text_bright;
@@ -492,7 +499,7 @@ QComboBox QAbstractItemView {
 }
 QComboBox QAbstractItemView::item {
     padding: 5px 8px;
-    border-radius: 0px;
+    border-radius: 3px;
     min-height: 18px;
 }
 QComboBox QAbstractItemView::item:hover {
@@ -513,14 +520,15 @@ QComboBox::drop-down:hover {
 }
 QComboBox::down-arrow {
     image: url(theme:premium/icons/arrow-down.svg);
-
+    width:  0.8em;
+    height: 1.2em;
 }
 QComboBox::down-arrow:hover,
 QComboBox::down-arrow:on {
     image: url(theme:premium/icons/arrow-down-hover.svg);
 }
 QComboBox::down-arrow:disabled {
-    image: url(theme:premium/icons/arrow-down.svg);
+    image: url(theme:premium/icons/arrow-down-disabled.svg);
 }
 
 
@@ -636,19 +644,6 @@ QAbstractItemView::item:hover {
 QAbstractItemView::item:selected {
     background-color: @bg_selected;
     color: @text_bright;
-}
-
-
-QgsPropertyOverrideButton {
-    background-color: @bg_window;
-    color: @text;
-    border: 1px solid @border_btn;
-    border-radius: 3px;
-    padding: 3px 3px;
-    min-width:  32px;
-    min-height: 32px;
-    font-size: 8pt;
-    font-weight: 600;
 }
 
 
@@ -794,8 +789,8 @@ QCheckBox:disabled {
     color: @text_disabled;
 }
 QCheckBox::indicator {
-    width:  0.65em;
-    height: 0.65em;
+    width:  0.8em;
+    height: 0.8em;
     border: 1px solid @border_indicator;
     background-color: @bg_indicator;
     border-radius: 3px;
@@ -826,27 +821,29 @@ QCheckBox::indicator:checked:disabled {
 QRadioButton {
     background: transparent;
     color: @text;
-    spacing: 5px;
-    padding: 1px 0;
+    spacing: 7px;
+    padding: 2px 0;
 }
-
 QRadioButton::indicator {
-    width: 0.65em;
-    height: 0.65em;
+    width:  0.8em;
+    height: 0.8em;
     border: 1px solid @border_indicator;
     background-color: @bg_indicator;
-    border-radius: 0.325em;
+    border-radius: 0.4em;
 }
-
 QRadioButton::indicator:hover {
     border-color: @accent;
     background-color: @border_list_item;
 }
-
 QRadioButton::indicator:checked {
     background-color: @accent;
     border: 1px solid @accent;
+    border-radius: 0.4em;
     image: url(theme:premium/icons/radio-dot.svg);
+}
+QRadioButton::indicator:checked:disabled {
+    background-color: @accent_disabled;
+    border-color: @accent_disabled;
 }
 
 
@@ -1079,20 +1076,6 @@ QgsProcessingToolboxTreeView::item:selected:active {
     background-color: @bg_selected_active;
     color: @text_bright;
 }
-
-QgsLayerTreeView::indicator {
-    background-color: @bg_indicator;
-    border: 1px solid @border_indicator;
-
-}
-QgsLayerTreeView::indicator:checked {
-    background-color: @checkmark;
-    border: 1px solid @accent;
-}
-
-
-
-
 
 QgsCodeEditor,
 QgsCodeEditorPython,
@@ -1425,11 +1408,11 @@ QgsLayerStylingDock   QListWidget::item:selected {
  *  Spin-box / date-time / combo-box arrows  (10 x 10)
  *  -------------------------------------------------------------------
  *    icons/arrow-up.svg              triangle pointing up,    @arrow_normal
- *    icons/arrow-up.svg        triangle pointing up,    @accent
- *    icons/arrow-up.svg     triangle pointing up,    @arrow_disabled
+ *    icons/arrow-up-hover.svg        triangle pointing up,    @accent
+ *    icons/arrow-up-disabled.svg     triangle pointing up,    @arrow_disabled
  *    icons/arrow-down.svg            triangle pointing down,  @arrow_normal
  *    icons/arrow-down-hover.svg      triangle pointing down,  @accent
- *    icons/arrow-down.svg   triangle pointing down,  @arrow_disabled
+ *    icons/arrow-down-disabled.svg   triangle pointing down,  @arrow_disabled
  *
  *  Tree-view branch indicators              (14 x 14)
  *  -------------------------------------------------------------------
@@ -1449,6 +1432,3 @@ QgsLayerStylingDock   QListWidget::item:selected {
  * above to @accent for checked, @accent_indeterminate for partial).
  * =========================================================================
  */
-
-
-
