@@ -749,6 +749,7 @@ QCheckBox {
 background: transparent;
 color: @text;
 spacing: 7px;
+
 padding: 2px 0;
 }
 QCheckBox:disabled {
