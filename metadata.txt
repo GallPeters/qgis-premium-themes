@@ -5,7 +5,7 @@ qgisMinimumVersion=4.0
 qgisMaximumVersion=4.99
 description=Modern themes that enhance QGIS UI and reflect its true power through a clean, professional design.
 about=Modern UI themes for QGIS that give the interface a clean, studio-grade look and reflect the real strength of QGIS through a refined visual experience.
-version=0.3
+version=0.4
 author=Jossef Kanter
 email=jossefkan@gmail.com
 experimental=False
@@ -16,11 +16,20 @@ tracker=https://github.com/GallPeters/qgis-studio-themes
 tags=qss, gui, theme, themes, style, ui
 icon=icon.png
 changelog=
-    ** v0.3 (25.05.2026):
-         - Update checkbox appearance.
-         - Fill drop-down lists white margins.
-    ** v0.2 (19.05.2026):
-         - Fix arrows visibility.
-         - Fix progress bar appearance.
-    ** v0.1 (18.05.2026):
-         - Initial.
+     ** v0.4 (21.06.2026):
+          - Updated icon.
+          - Fixed operator button icons.
+          - Fixed layer panel extension button icon.
+          - Fixed symbol preview widget internal borders.
+          - Fixed debugging panel vertical menu width.
+
+     ** v0.3 (25.05.2026):
+          - Updated checkbox appearance.
+          - Filled dropdown list white margins.
+
+     ** v0.2 (19.05.2026):
+          - Fixed arrow visibility.
+          - Fixed progress bar appearance.
+
+     ** v0.1 (18.05.2026):
+          - Initial release.

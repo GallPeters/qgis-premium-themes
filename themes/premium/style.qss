@@ -89,9 +89,9 @@ height: 14px;
 
 The previous revision set titlebar-close-icon: none and
 titlebar-normal-icon: none, which hid the close/float buttons entirely
-and forced users to find the matching toolbar action.  We now intentionally
+and forced users to find the matching toolbar action. We now intentionally
 do NOT override the icons — Qt's standard pixmaps (drawn by QStyle on top
-of the button background defined below) remain visible.  The buttons are
+of the button background defined below) remain visible. The buttons are
 then sized, positioned, and themed so they fit the dark UI cleanly.
 */
 QDockWidget {
@@ -147,6 +147,24 @@ background-color: @border;
 width: 1px;
 margin: 4px 4px;
 }
+
+QToolBar::extension-button,
+QToolButton#qt_toolbar_ext_button {
+    qproperty-icon: url(); /* This explicitly clears the native Qt icon */
+    image: url(theme:premium/icons/arrow-down.svg);
+    min-width: 10px;
+    min-height: 10px;
+    padding: 1px;
+    border: none;
+    background: transparent;
+}
+
+QToolBar::extension-button:hover,
+QToolButton#qt_toolbar_ext_button:hover {
+    image: url(theme:premium/icons/arrow-down-hover.svg);
+    background-color: @bg_hover_raised;
+}
+
 QMenuBar {
 background-color: @bg_window;
 color: @text;
@@ -234,6 +252,11 @@ QPushButton:disabled {
 background-color: @bg_disabled;
 color: @text_disabled;
 border-color: @bg_selected_inactive;
+}
+/* Expression Builder operator buttons specific override */
+QgsExpressionBuilderWidget QPushButton {
+min-width: 20px;
+padding: 4px 6px;
 }
 QToolButton {
 background: transparent;
@@ -379,8 +402,8 @@ QgsSpinBox::down-button:pressed, QgsDoubleSpinBox::down-button:pressed {
 background-color: @accent_pressed;
 }
 /* Arrow glyphs themselves — loaded from ./icons/, sized in em so they scale
-
-with the UI font and remain crisp on HiDPI displays.  Using QAbstractSpinBox
+with the UI font and remain crisp on HiDPI displays.
+Using QAbstractSpinBox
 (the common parent) covers QSpinBox, QDoubleSpinBox, QDateEdit, QTimeEdit,
 QDateTimeEdit, QgsSpinBox and QgsDoubleSpinBox in a single selector.
 */
@@ -406,8 +429,8 @@ QAbstractSpinBox::down-arrow:off {
 image: url(theme:premium/icons/arrow-down.svg);
 }
 /* Header sort indicator (visible in QTableView / QTreeView / attribute tables
-
-when a column is sorted).  Sized in em so it stays legible on HiDPI.
+when a column is sorted).
+Sized in em so it stays legible on HiDPI.
 */
 QHeaderView::up-arrow {
 image: url(theme:premium/icons/arrow-up.svg);
@@ -667,9 +690,12 @@ background-color: @bg_window;
 color: @text_bright;
 border-color: @border_dim;
 }
-QTabBar::tab:selected:top    { border-bottom: 2px solid @accent; padding-bottom: 4px; }
-QTabBar::tab:selected:bottom { border-top:    2px solid @accent; padding-top:    4px; }
-QTabBar::tab:selected:left   { border-right:  2px solid @accent; padding-right:  6px; }
+QTabBar::tab:selected:top    { border-bottom: 2px solid @accent; padding-bottom: 4px;
+}
+QTabBar::tab:selected:bottom { border-top:    2px solid @accent; padding-top:    4px;
+}
+QTabBar::tab:selected:left   { border-right:  2px solid @accent; padding-right:  6px;
+}
 QTabBar::tab:selected:right  { border-left:   2px solid @accent; padding-left:   6px; }
 QTabBar::tab:!selected {
 margin-top: 2px;
@@ -741,7 +767,7 @@ background-color: @bg_base;
 Sizing in px (not em) so the indicator stays large enough for the border
 to be clearly visible across all dialogs — including the Marker Buffer
 Settings panel where the previous 0.65em sizing collapsed the box down
-to ~8px and the border read as invisible.  Qt scales QSS pixel values
+to ~8px and the border read as invisible. Qt scales QSS pixel values
 by the device pixel ratio on HiDPI displays automatically.
 ========================================================================= */
 
@@ -833,7 +859,7 @@ border-color: @accent_disabled;
 
 Fixes the "invisible checkbox border" in panels like
 Marker Symbol -> Advanced -> Buffer Settings -> Draw buffer
-where the enable/disable toggle lives in the group-box title row.  Without
+where the enable/disable toggle lives in the group-box title row. Without
 an explicit ::indicator rule the platform style renders a near-borderless
 native checkbox over the dark title, hiding everything except the check.
 */
@@ -889,7 +915,7 @@ border-color: @accent_disabled;
 
 QGIS uses checkable items in many tree/list views (layer visibility in the
 Layers panel, the enabled/disabled toggle in Plugin Manager, options trees,
-filter checklists in attribute forms, ...).  These checkboxes are painted
+filter checklists in attribute forms, ...). These checkboxes are painted
 by the item delegate using the ::indicator subcontrol of the parent view.
 Without explicit rules the platform style leaks in and the checkboxes
 lose their dark-theme look.  The rules below force consistent theming.
@@ -1073,29 +1099,31 @@ background-color: @bg_window;
 QSplitter::handle {
 background-color: @border_subtle;
 }
-QSplitter::handle:horizontal { width:  2px; }
+QSplitter::handle:horizontal { width:  2px;
+}
 QSplitter::handle:vertical   { height: 2px; }
-QSplitter::handle:hover      { background-color: @accent; }
+QSplitter::handle:hover      { background-color: @accent;
+}
 QSplitter::handle:pressed    { background-color: @accent_pressed; }
 QFrame {
 background-color: transparent;
 border: none;
 }
-/* Panel / Box / StyledPanel frame shapes /
+/* Panel / Box / StyledPanel frame shapes */
 QFrame[frameShape="2"],
 QFrame[frameShape="3"],
 QFrame[frameShape="6"] {
 border: 1px solid @border_dim;
 border-radius: 3px;
 }
-/ HLine /
+/* HLine */
 QFrame[frameShape="4"] {
 background-color: @border_subtle;
 border: none;
 max-height: 1px;
 min-height: 1px;
 }
-/ VLine */
+/* VLine */
 QFrame[frameShape="5"] {
 background-color: @border_subtle;
 border: none;
@@ -1117,33 +1145,17 @@ height: 1.3em;
 font-weight: 600;
 }
 /* Segmented chunk: the width: 3px turns the fill into discrete green
-
 segments separated by thin gaps (the bar's background shows through).
 This is the trick used by the PR #64503 reference theme:
 
-
-
 Determinate progress: bar visibly advances segment-by-segment from
 
-
-
 left to right, much easier for the eye to track than a solid fill.
-
-
-
 Indeterminate / busy progress (used by most QGIS Processing tasks
 
-
-
 since their algorithms cannot report exact percentages): Qt fills
-
-
 the chunk area but the segmentation keeps it from reading as
-
-
 "stuck at 100%".
-
-
 */
 QProgressBar::chunk {
 background-color: @accent;
@@ -1187,8 +1199,6 @@ border-radius: 2px;
 /* =========================================================================
 
 14. QGIS-SPECIFIC WIDGETS
-
-
 
 Note: indicator (checkbox) styling for QgsLayerTreeView, the Browser tree,
 the Processing toolbox tree and QgsCheckableComboBox is consolidated in
@@ -1314,12 +1324,10 @@ padding: 4px 8px;
 
 15. PLUGIN MANAGER LIST (named selectors)
 
-
-
 Recognised object names: vwPlugins, mListPlugins, mPluginsList.
 The original Python script applied a dedicated PLUGIN_LIST_QSS via
 WidgetFixer._fix_plugin_list; here we promote that to first-class QSS
-by selecting on those object names directly.  Item-indicator (the
+by selecting on those object names directly. Item-indicator (the
 enable/disable checkbox in each row) styling lives in Section 11.
 ========================================================================= */
 
@@ -1384,8 +1392,6 @@ color: @text_bright;
 /* =========================================================================
 
 16. OPTIONS / NAVIGATION LISTS & TREES (named selectors)
-
-
 
 The Python script applied NAV_LIST_QSS / NAV_TREE_QSS to widgets whose
 objectName matched a known set (mOptListWidget, mOptionsListWidget,
@@ -1497,7 +1503,6 @@ background-color: @bg_selected_inactive;
 color: @text;
 }
 /* Tree branch background (the indent column) AND the open/closed glyphs.
-
 Qt requires the four has-children:[!]has-siblings permutations below for
 the branch arrow to appear consistently regardless of position in the tree.
 Mirrors _build_nav_tree_qss from the original Python script.
@@ -1547,15 +1552,17 @@ image: url(theme:premium/icons/branch-open-hover.svg);
 }
 /* =========================================================================
 
-17. LAYER STYLING DOCK (vertical icon-mode list on the left)
+17. LAYER STYLING DOCK & DEV TOOLS (vertical icon-mode list on the left)
 ========================================================================= */
 
 QgsLayerStylingWidget QSplitter::handle,
-QgsLayerStylingDock   QSplitter::handle {
+QgsLayerStylingDock   QSplitter::handle,
+QgsDevToolsPanelWidget QSplitter::handle {
 background-color: @border_subtle;
 }
 QgsLayerStylingWidget QListWidget,
-QgsLayerStylingDock   QListWidget {
+QgsLayerStylingDock   QListWidget,
+QgsDevToolsPanelWidget QListWidget {
 background-color: @bg_statusbar;
 border: none;
 border-right: 1px solid @border_subtle;
@@ -1564,7 +1571,8 @@ alternate-background-color: @bg_statusbar;
 min-width: 50px;
 }
 QgsLayerStylingWidget QListWidget::item,
-QgsLayerStylingDock   QListWidget::item {
+QgsLayerStylingDock   QListWidget::item,
+QgsDevToolsPanelWidget QListWidget::item {
 padding: 4px 4px;
 margin: 0;
 border-radius: 0;
@@ -1572,12 +1580,14 @@ border: none;
 min-height: 36px;
 }
 QgsLayerStylingWidget QListWidget::item:hover,
-QgsLayerStylingDock   QListWidget::item:hover {
+QgsLayerStylingDock   QListWidget::item:hover,
+QgsDevToolsPanelWidget QListWidget::item:hover {
 background-color: @bg_hover;
 color: @text_bright;
 }
 QgsLayerStylingWidget QListWidget::item:selected,
-QgsLayerStylingDock   QListWidget::item:selected {
+QgsLayerStylingDock   QListWidget::item:selected,
+QgsDevToolsPanelWidget QListWidget::item:selected {
 background-color: @bg_selected_active;
 color: @text_bright;
 }
