@@ -1550,44 +1550,73 @@ QTreeView::branch:open:has-children:has-siblings:hover {
 border-image: none;
 image: url(theme:premium/icons/branch-open-hover.svg);
 }
-/* =========================================================================
 
+/* =========================================================================
 17. LAYER STYLING DOCK & DEV TOOLS (vertical icon-mode list on the left)
 ========================================================================= */
 
 QgsLayerStylingWidget QSplitter::handle,
 QgsLayerStylingDock   QSplitter::handle,
 QgsDevToolsPanelWidget QSplitter::handle {
-background-color: @border_subtle;
+    background-color: @border_subtle;
 }
+
 QgsLayerStylingWidget QListWidget,
 QgsLayerStylingDock   QListWidget,
 QgsDevToolsPanelWidget QListWidget {
-background-color: @bg_statusbar;
-border: none;
-border-right: 1px solid @border_subtle;
-border-radius: 0;
-alternate-background-color: @bg_statusbar;
-min-width: 50px;
+    background-color: @bg_statusbar;
+    border: none;
+    border-right: 1px solid @border_subtle;
+    border-radius: 0;
+    alternate-background-color: @bg_statusbar;
+    /* Lock the width to ensure consistent layout and prevent splitter compression */
+    min-width: 56px;
+    max-width: 56px;
 }
+
 QgsLayerStylingWidget QListWidget::item,
 QgsLayerStylingDock   QListWidget::item,
 QgsDevToolsPanelWidget QListWidget::item {
-padding: 4px 4px;
-margin: 0;
-border-radius: 0;
-border: none;
-min-height: 36px;
+    /* Adjusted padding to center 24px icons perfectly inside the 48px available viewport */
+    padding: 6px 0px;
+    padding-left: 12px;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    min-height: 36px;
 }
-QgsLayerStylingWidget QListWidget::item:hover,
-QgsLayerStylingDock   QListWidget::item:hover,
-QgsDevToolsPanelWidget QListWidget::item:hover {
-background-color: @bg_hover;
-color: @text_bright;
+
+/* Isolate and style the vertical scrollbar within this panel */
+QgsLayerStylingWidget QListWidget QScrollBar:vertical,
+QgsLayerStylingDock QListWidget QScrollBar:vertical,
+QgsDevToolsPanelWidget QListWidget QScrollBar:vertical {
+    width: 8px; /* Increased width for better usability */
+    background: transparent;
+    margin: 0px;
 }
-QgsLayerStylingWidget QListWidget::item:selected,
-QgsLayerStylingDock   QListWidget::item:selected,
-QgsDevToolsPanelWidget QListWidget::item:selected {
-background-color: @bg_selected_active;
-color: @text_bright;
+
+QgsLayerStylingWidget QListWidget QScrollBar::handle:vertical,
+QgsLayerStylingDock QListWidget QScrollBar::handle:vertical,
+QgsDevToolsPanelWidget QListWidget QScrollBar::handle:vertical {
+    background-color: @border_subtle;
+    border-radius: 4px; /* Rounded pill shape matching the 8px width */
+    min-height: 20px;
+}
+
+/* Hover state to make the scrollbar handle highly noticeable */
+QgsLayerStylingWidget QListWidget QScrollBar::handle:vertical:hover,
+QgsLayerStylingDock QListWidget QScrollBar::handle:vertical:hover,
+QgsDevToolsPanelWidget QListWidget QScrollBar::handle:vertical:hover {
+    background-color: @scrollbar_handle_hover; /* Uses your theme's distinct hover color */
+}
+
+QgsLayerStylingWidget QListWidget QScrollBar::add-line:vertical,
+QgsLayerStylingWidget QListWidget QScrollBar::sub-line:vertical,
+QgsLayerStylingDock QListWidget QScrollBar::add-line:vertical,
+QgsLayerStylingDock QListWidget QScrollBar::sub-line:vertical,
+QgsDevToolsPanelWidget QListWidget QScrollBar::add-line:vertical,
+QgsDevToolsPanelWidget QListWidget QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
 }

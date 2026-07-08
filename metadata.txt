@@ -16,12 +16,18 @@ tracker=https://github.com/GallPeters/qgis-studio-themes
 tags=qss, gui, theme, themes, style, ui
 icon=icon.png
 changelog=
-     ** v0.4 (21.06.2026):
+     
+     ** v0.5 (08.07.2026):
+          - Fixed Layer Styling layout width and icon alignment.
+          - Improved panel scrollbar width and hover color.
           - Updated icon.
+     
+     ** v0.4 (21.06.2026):
           - Fixed operator button icons.
           - Fixed layer panel extension button icon.
           - Fixed symbol preview widget internal borders.
           - Fixed debugging panel vertical menu width.
+          - Updated icon.
 
      ** v0.3 (25.05.2026):
           - Updated checkbox appearance.
