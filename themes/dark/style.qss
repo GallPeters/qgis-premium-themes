@@ -1561,9 +1561,9 @@ QgsDevToolsPanelWidget QSplitter::handle {
     background-color: @border_subtle;
 }
 
-QgsLayerStylingWidget QListWidget,
-QgsLayerStylingDock   QListWidget,
-QgsDevToolsPanelWidget QListWidget {
+QgsLayerStylingWidget QListWidget#mOptionsListWidget,
+QgsLayerStylingDock   QListWidget#mOptionsListWidget,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget {
     background-color: @bg_statusbar;
     border: none;
     border-right: 1px solid @border_subtle;
@@ -1574,9 +1574,9 @@ QgsDevToolsPanelWidget QListWidget {
     max-width: 56px;
 }
 
-QgsLayerStylingWidget QListWidget::item,
-QgsLayerStylingDock   QListWidget::item,
-QgsDevToolsPanelWidget QListWidget::item {
+QgsLayerStylingWidget QListWidget#mOptionsListWidget::item,
+QgsLayerStylingDock   QListWidget#mOptionsListWidget::item,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget::item {
     /* Adjusted padding to center 24px icons perfectly inside the 48px available viewport */
     padding: 6px 0px;
     padding-left: 12px;
@@ -1587,35 +1587,38 @@ QgsDevToolsPanelWidget QListWidget::item {
 }
 
 /* Isolate and style the vertical scrollbar within this panel */
-QgsLayerStylingWidget QListWidget QScrollBar:vertical,
-QgsLayerStylingDock QListWidget QScrollBar:vertical,
-QgsDevToolsPanelWidget QListWidget QScrollBar:vertical {
-    width: 8px; /* Increased width for better usability */
+QgsLayerStylingWidget QListWidget#mOptionsListWidget QScrollBar:vertical,
+QgsLayerStylingDock QListWidget#mOptionsListWidget QScrollBar:vertical,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget QScrollBar:vertical {
+    width: 8px;
+    /* Increased width for better usability */
     background: transparent;
     margin: 0px;
 }
 
-QgsLayerStylingWidget QListWidget QScrollBar::handle:vertical,
-QgsLayerStylingDock QListWidget QScrollBar::handle:vertical,
-QgsDevToolsPanelWidget QListWidget QScrollBar::handle:vertical {
+QgsLayerStylingWidget QListWidget#mOptionsListWidget QScrollBar::handle:vertical,
+QgsLayerStylingDock QListWidget#mOptionsListWidget QScrollBar::handle:vertical,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget QScrollBar::handle:vertical {
     background-color: @border_subtle;
-    border-radius: 4px; /* Rounded pill shape matching the 8px width */
+    border-radius: 4px;
+    /* Rounded pill shape matching the 8px width */
     min-height: 20px;
 }
 
 /* Hover state to make the scrollbar handle highly noticeable */
-QgsLayerStylingWidget QListWidget QScrollBar::handle:vertical:hover,
-QgsLayerStylingDock QListWidget QScrollBar::handle:vertical:hover,
-QgsDevToolsPanelWidget QListWidget QScrollBar::handle:vertical:hover {
-    background-color: @scrollbar_handle_hover; /* Uses your theme's distinct hover color */
+QgsLayerStylingWidget QListWidget#mOptionsListWidget QScrollBar::handle:vertical:hover,
+QgsLayerStylingDock QListWidget#mOptionsListWidget QScrollBar::handle:vertical:hover,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget QScrollBar::handle:vertical:hover {
+    background-color: @scrollbar_handle_hover;
+    /* Uses your theme's distinct hover color */
 }
 
-QgsLayerStylingWidget QListWidget QScrollBar::add-line:vertical,
-QgsLayerStylingWidget QListWidget QScrollBar::sub-line:vertical,
-QgsLayerStylingDock QListWidget QScrollBar::add-line:vertical,
-QgsLayerStylingDock QListWidget QScrollBar::sub-line:vertical,
-QgsDevToolsPanelWidget QListWidget QScrollBar::add-line:vertical,
-QgsDevToolsPanelWidget QListWidget QScrollBar::sub-line:vertical {
+QgsLayerStylingWidget QListWidget#mOptionsListWidget QScrollBar::add-line:vertical,
+QgsLayerStylingWidget QListWidget#mOptionsListWidget QScrollBar::sub-line:vertical,
+QgsLayerStylingDock QListWidget#mOptionsListWidget QScrollBar::add-line:vertical,
+QgsLayerStylingDock QListWidget#mOptionsListWidget QScrollBar::sub-line:vertical,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget QScrollBar::add-line:vertical,
+QgsDevToolsPanelWidget QListWidget#mOptionsListWidget QScrollBar::sub-line:vertical {
     border: none;
     background: none;
     height: 0px;
