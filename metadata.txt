@@ -5,7 +5,7 @@ qgisMinimumVersion=4.0
 qgisMaximumVersion=4.99
 description=Modern themes that enhance QGIS UI and reflect its true power through a clean, professional design.
 about=Modern UI themes for QGIS that give the interface a clean, studio-grade look and reflect the real strength of QGIS through a refined visual experience.
-version=0.6
+version=0.7
 author=Jossef Kanter
 email=jossefkan@gmail.com
 experimental=False
@@ -16,6 +16,12 @@ tracker=https://github.com/GallPeters/qgis-studio-themes
 tags=qss, gui, theme, themes, style, ui
 icon=icon.png
 changelog=
+
+     ** v0.7 (14.07.2026):
+          - New Studio Light Orange theme (Kartoza brand colours, WCAG-checked contrast).
+          - New Studio QGIS Light theme (QGIS brand style guide colours).
+          - Light Studio themes now force a light Qt colour scheme even when
+            the desktop is in dark mode (dark themes force dark likewise).
 
      ** v0.6 (13.07.2026):
           - Fixed marker symbol grid layout in the Layer Styling panel.
