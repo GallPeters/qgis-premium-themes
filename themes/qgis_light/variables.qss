@@ -1,0 +1,168 @@
+/* =========================================================================
+ * QGIS Studio QGIS Light Theme — Color Variables
+ * -------------------------------------------------------------------------
+ * Compatible with : QGIS 4.0 / Qt6 theme system (PR #64503)
+ * Format          : QGIS variables.qss — `@name: value` per line
+ *                   Tokens are text-substituted into style.qss at load time.
+ * -------------------------------------------------------------------------
+ * Palette DNA — QGIS brand style guide (https://qgis.org/styleguide/)
+ *
+ *   Dark Green   #589632   primary brand — accents, CTAs, focus rings
+ *   Light Green  #93B023   secondary — hover feedback, lesser importance
+ *   Orange       #EE7913   accent / call-to-action (darkened to #C05F09
+ *                          for hover rings so contrast stays ≥3:1)
+ *   Lemon        #F0E64A   accent (too light for line work on paper —
+ *                          reserved; its warmth informs the hover tints)
+ *
+ * Design principles
+ *   • LIGHT theme: backgrounds are a fresh green-tinted paper ramp,
+ *     each layer separated by ~3–5 HSL-lightness points.
+ *   • Borders sit BELOW their parent surface in lightness (the inverse of
+ *     the dark themes) so edges read as gentle shadows, not glow.
+ *   • QGIS Dark Green #589632 is 3.6:1 against white, so it is used
+ *     UNMODIFIED as the accent — brand-true and WCAG 1.4.11 compliant.
+ *     Light Green #93B023 takes the hover role, mirroring the brand
+ *     gradient (dark green → light green) as an interaction gesture.
+ *   • All accent surfaces carry DARK text/glyphs (@text_dark, @checkmark):
+ *     #10140B on #589632 is ~4.8:1 — never light-on-light.
+ *   • Body text #2B2E27 on the paper ramp is ≥11:1 everywhere.
+ * =========================================================================
+ */
+
+
+/* =========================================================================
+ * ACCENT — QGIS Brand Green  #589632
+ * =========================================================================
+ *  Base    #589632   brand green, interactive elements, focus rings
+ *  Hover   #93B023   brand light green — the logo gradient, animated
+ *  Pressed −10 L     darker, tactile depression
+ *  Checked  border   distinct from hover
+ *  Disabled desaturated pale green
+ *  Indet.  halfway between base and hover
+ *  Transl. 15 % alpha brand-green fill for rubber-band / halos
+ * =========================================================================
+ */
+@accent:                 #589632;
+@accent_hover:           #93B023;
+@accent_pressed:         #467828;
+@accent_checked_border:  #4C8030;
+@accent_disabled:        #C9DCB9;
+@accent_indeterminate:   #77A24B;
+@accent_translucent:     rgba(88, 150, 50, 0.15);
+
+
+/* =========================================================================
+ * BACKGROUNDS
+ * =========================================================================
+ *  Fresh paper ramp (lightest to darkest) — a whisper of brand green
+ *
+ *   #FEFFFC  base            (tree views, list backgrounds, editors)
+ *   #F9FBF6  menu            (pop-up menus, tooltips)
+ *   #F4F7F0  alt             (alternating rows, focused inputs)
+ *   #F1F4ED  window          (main window, dialog backgrounds)
+ *   #EAEEE4  dock            (panel / dock widget chrome)
+ *   #E2E7DA  statusbar       (statusbar, dock titles — darkest chrome)
+ *
+ *  Selection surfaces — green-tinted, dark text on top
+ *   #E2EFD5  selected        (inactive selection)
+ *   #CFE3BA  selected active (focused selection)
+ *   #E8ECE2  selected inact. (unfocused / lost-focus selection)
+ * =========================================================================
+ */
+@bg_window:              #F1F4ED;
+@bg_base:                #FEFFFC;
+@bg_alt:                 #F4F7F0;
+@bg_dock:                #EAEEE4;
+@bg_statusbar:           #E2E7DA;
+@bg_menu:                #F9FBF6;
+@bg_disabled:            #EFF1EB;
+@bg_btn_status_hover:    #E6EBDD;
+@bg_pressed:             #DDE3D3;
+@bg_hover:               #EAF1E1;
+@bg_hover_raised:        #EDF3E4;
+@bg_indicator:           #FFFFFF;
+@bg_btn_hover:           #E3ECD8;
+@bg_selected:            #E2EFD5;
+@bg_selected_active:     #CFE3BA;
+@bg_selected_inactive:   #E8ECE2;
+@bg_plugin_inactive:     #E7F0DC;
+@bg_plugin_sel_hover:    #C3DCA9;
+
+
+/* =========================================================================
+ * BORDERS / SEPARATORS
+ * =========================================================================
+ *  Cool grey-greens, each ~6–10 L points BELOW its matching background
+ *  so edges read clearly on the paper surfaces.
+ *
+ *  @border              general widget outline
+ *  @border_subtle       hairline dividers
+ *  @border_darker       deepest inset lines
+ *  @border_dim          secondary / muted outlines
+ *  @border_btn          button ring at rest
+ *  @border_hover        input / combo ring on hover — QGIS Orange #EE7913
+ *                       darkened to #C05F09 (≥3:1 on all input surfaces)
+ *  @border_indicator    checkbox / radio outline (3.7:1 on white)
+ *  @border_list_item    row separators + header fill in lists
+ *  @separator_bg        toolbar / menu separator fill
+ * =========================================================================
+ */
+@border:                 #C4CBB8;
+@border_subtle:          #D8DECE;
+@border_darker:          #ACB49E;
+@border_dim:             #CED5C2;
+@border_btn:             #B8C0AA;
+@border_hover:           #C05F09;
+@border_indicator:       #7C8471;
+@border_list_item:       #E3E8DA;
+@separator_bg:           #D3D9C6;
+
+
+/* =========================================================================
+ * TEXT
+ * =========================================================================
+ *  Cool charcoal family. NOTE the light-theme inversion: @text_bright is
+ *  the DARKEST ink (used for emphasis / selected rows) so emphasised text
+ *  always gains contrast, never loses it.
+ *
+ *  @text            body / general UI copy         (≥11:1 on all surfaces)
+ *  @text_bright     headings, active labels        (darkest ink)
+ *  @text_dim        secondary / metadata           (≥4.5:1 on chrome)
+ *  @text_disabled   greyed-out labels
+ *  @text_light      slightly muted body (dock titles on @bg_statusbar)
+ *  @text_header     panel / dock titles
+ *  @text_placeholder input hint text               (≥4.5:1 on @bg_base)
+ *  @text_dark       text on accent surfaces        (~4.8:1 on @accent)
+ * =========================================================================
+ */
+@text:                   #2B2E27;
+@text_bright:            #171A13;
+@text_dim:               #5D6354;
+@text_disabled:          #A3A996;
+@text_light:             #414639;
+@text_header:            #3F4534;
+@text_placeholder:       #6D7360;
+@text_dark:              #10140B;
+
+
+/* =========================================================================
+ * RESERVED PAINTER TOKENS
+ * =========================================================================
+ *  @checkmark is drawn on the checked @accent fill — dark ink for ~5:1.
+ *  Arrow glyph colours are mirrored by the SVGs in ./icons/.
+ * =========================================================================
+ */
+@checkmark:              #0D1108;
+
+/* ---- Arrow / icon glyph colours ---------------------------------------- */
+@arrow_normal:           #575D4C;
+@arrow_disabled:         #AEB4A1;
+
+
+/* =========================================================================
+ * SCROLLBAR
+ * =========================================================================
+ *  Hover pop uses brand green #589632 (3.6:1 on the white track).
+ * =========================================================================
+ */
+@scrollbar_handle_hover: #589632;
